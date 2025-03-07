@@ -1,0 +1,58 @@
+@import './variables';
+
+$prefix: '-';
+$gutter: 15px;
+$gutter-medium: 10px;
+
+$breakpoints: (
+ // 'quad-hd': $quad-hd,
+  'full-hd': $full-hd,
+  'widescreen': $widescreen,
+  'tablet-wide': $tablet-wide,
+  'tablet': $tablet,
+  'mobile': $mobile
+);
+
+$columns: (
+  '16': 16.6666666%,
+  '20': 20%,
+  '25': 25%,
+  '30': 30%,
+  '33': 33.3333%,
+  '40': 40%,
+  '45': 45%,
+  '50': 50%,
+  '55': 55%,
+  '60': 60%,
+  '66': 66.666%,
+  '70': 70%,
+  '75': 75%,
+  '80': 80%,
+  '100': 100%
+);
+
+.container {max-width: 1440px; width: 100%; margin: 0 auto; padding: 0 $gutter;}
+.row {display: flex; margin: 0 calc(var(--gutter) * -1); flex-wrap: wrap; --gutter: #{$gutter};
+  &.medium_gutter {--gutter: #{$gutter-medium};}
+  &.align-items-end {align-items: flex-end;}
+  &.justify-content-between {justify-content: space-between;}
+}
+[class^="col#{$prefix}"] {padding: 0 var(--gutter);}
+.col {flex: 1 0 0; max-width: 100%; padding: 0 var(--gutter);
+  &#{$prefix}auto {flex: 0 1;}
+  @each $name, $size in $columns {
+    &#{$prefix}#{$name} {
+      flex: 0 0 #{$size}; max-width: #{$size};
+    }
+  }
+
+  @each $breakpointName, $breakpoint in $breakpoints {
+    @media (max-width: #{$breakpoint}) {
+      @each $name, $size in $columns {
+        &#{$prefix}#{$breakpointName}#{$prefix}#{$name} {
+          flex: 0 0 #{$size}; max-width: #{$size};
+        }
+      }
+    }
+  }
+}
