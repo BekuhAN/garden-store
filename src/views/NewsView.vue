@@ -1,5 +1,5 @@
 <template>
-  <main class="news_page">
+  <main class="news_page" v-if="newsItem">
     <section class="news_page__wrapper">
       <div class="container">
         <div class="news_page__inner">
@@ -20,7 +20,7 @@ import { mapGetters, mapActions } from "vuex";
 export default {
   data() {
     return {
-      newsItem: [],
+      newsItem: null,
       newsList: [],
     };
   },

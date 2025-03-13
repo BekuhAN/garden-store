@@ -10,11 +10,11 @@
           </div>
           <div class="col-60">
             <div class="item__single__title">{{ Item.title }}</div>
-            <div class="item__single__price">
+            <div class="item__single__price" v-if="Item.price">
               <span class="old" v-if="Item.oldPrice > 0">
-                {{ Item.oldPrice }}
+                {{ priceFormat(Item.oldPrice) }} ₽
               </span>
-              {{ Item.price }}
+              {{ priceFormat(Item.price) }} ₽
             </div>
             <div class="item__single__description">{{ Item.description }}</div>
             <div class="item__single__pay">
@@ -29,6 +29,7 @@
                 value="1"
                 v-model="count"
               />
+              шт.
             </div>
             <div class="item__single__info" v-html="Item.info"></div>
           </div>
@@ -83,6 +84,9 @@ export default {
       this.CatalogList = this.getCatalog.filter(
         (item) => item.id != this.$route.params.id
       );
+    },
+    priceFormat(price) {
+      return price.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1 ");
     },
     addToCart() {
       this.addCartItem({ ...this.Item, count: this.count });

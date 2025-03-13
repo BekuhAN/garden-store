@@ -5,19 +5,27 @@
       <div class="services__list">
         <div class="services__list__item">
           <div class="services__list__item__icon">
-            <unicon name="truck" fill="#fff" />
+            <Icon icon="solar:delivery-line-duotone" width="100" height="100" />
           </div>
           <div class="services__list__item__title">Бесплатная доставка</div>
         </div>
         <div class="services__list__item">
           <div class="services__list__item__icon">
-            <unicon name="usd-circle" fill="#fff" />
+            <Icon
+              icon="solar:hand-money-line-duotone"
+              width="100"
+              height="100"
+            />
           </div>
           <div class="services__list__item__title">Выгодные цены</div>
         </div>
         <div class="services__list__item">
           <div class="services__list__item__icon">
-            <unicon name="flower" fill="#fff" />
+            <Icon
+              icon="solar:bag-check-line-duotone"
+              width="100"
+              height="100"
+            />
           </div>
           <div class="services__list__item__title">Поддержка 24/7</div>
         </div>
@@ -27,7 +35,8 @@
 </template>
 
 <script>
-export default {};
+import { Icon } from "@iconify/vue";
+export default { components: { Icon } };
 </script>
 
 <style lang="scss">

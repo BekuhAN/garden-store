@@ -72,6 +72,7 @@ export default {};
       margin-bottom: 20px;
       font-weight: 700;
       color: $main-color;
+      font-family: "Montserrat Alternates", sans-serif;
     }
     &__content {
       font-size: 14px;
@@ -86,6 +87,7 @@ export default {};
       border-radius: 30px;
       margin-top: 30px;
       display: inline-block;
+      font-family: "Montserrat Alternates", sans-serif;
       padding: 15px 45px;
       background: $main-color;
       transition: 0.4s;

@@ -30,9 +30,9 @@
         item.title
       }}</router-link>
       <div class="catalog_item__price">
-        {{ item.price }}
+        {{ priceFormat(item.price) }} ₽
         <span class="old" v-if="item.oldPrice > 0">
-          {{ item.oldPrice }}
+          {{ priceFormat(item.oldPrice) }} ₽
         </span>
       </div>
     </div>
@@ -49,6 +49,9 @@ export default {
       this.addCartItem({ ...this.item, count: 1 });
     },
     ...mapActions(["addCartItem"]),
+    priceFormat(price) {
+      return price.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1 ");
+    },
   },
   components: { Icon },
 };

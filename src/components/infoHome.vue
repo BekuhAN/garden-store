@@ -1,7 +1,7 @@
 <template>
   <section class="info">
     <div class="info__wrapper">
-      <div class="info__title">Магазин Jardin — это</div>
+      <div class="info__title">Магазин "Зеленое дело" — это</div>
       <div class="info__sub_title">
         ТОП-бренды оборудования для выращивания растений дома!
       </div>
@@ -19,8 +19,8 @@
           >Гарантия 12 месяцев. Возможность возврата и обмена.</span
         >
         <span class="info__list__item"
-          >Консультация экспертов команды Jardin — ваш помощник в быстром
-          освоении тонкостей выращивания растений дома!</span
+          >Консультация экспертов команды "Зеленое дело" — ваш помощник в
+          быстром освоении тонкостей выращивания растений дома!</span
         >
       </div>
       <router-link to="/catalog" class="info__btn">В каталог</router-link>
@@ -51,12 +51,13 @@ export default {};
     padding: 50px;
   }
   &__title {
-    font-size: 60px;
-    font-weight: 700;
+    font-size: 50px;
+    font-weight: 800;
     margin-bottom: 15px;
+    font-family: "Montserrat Alternates", sans-serif;
   }
   &__sub_title {
-    font-size: 32px;
+    font-size: 28px;
     font-weight: 500;
     margin-bottom: 40px;
     color: $main-color;

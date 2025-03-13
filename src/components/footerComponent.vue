@@ -91,7 +91,7 @@
             <div class="footer__info">
               <span>Адрес: улица Труда, 243, Краснодар</span>
               <span
-                >Почта: <a href="mailto:info@jardin.ru">info@jardin.ru</a></span
+                >Почта: <a href="mailto:info@garden.ru">info@garden.ru</a></span
               >
               <span
                 >Телефон:
@@ -103,7 +103,7 @@
       </div>
     </div>
     <div class="footer__copyright">
-      Copyright © 2023 Jardin – Все права защищены.
+      Copyright © 2025 "Зеленое дело" – Все права защищены.
     </div>
   </footer>
 </template>

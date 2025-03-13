@@ -6,7 +6,7 @@
     <div class="container contacts__wrapper">
       <div class="contacts__map">
         <iframe
-          src="https://yandex.ru/map-widget/v1/?um=constructor%3A1329757830259fbb8f22c6dd7df75c0e0545794ea52d31c66cf2081d6e36eb77&amp;source=constructor&amp;scroll=false"
+          src="https://yandex.ru/map-widget/v1/?um=constructor%3A1329757830259fbb8f22c6dd7df75c0e0545794ea52d31c66cf2081d6e36eb77&amp;source=constructor"
           width="100%"
           height="400"
           frameborder="0"
@@ -24,7 +24,7 @@
             </div>
             <div class="col-100 contacts__info__detail">
               <div class="contacts__info__detail__title">Почта</div>
-              <div class="contacts__info__detail__text">info@jardin.ru</div>
+              <div class="contacts__info__detail__text">info@garden.ru</div>
             </div>
             <div class="col-100 contacts__info__detail">
               <div class="contacts__info__detail__title">Телефон</div>
@@ -42,17 +42,20 @@
               <div class="contacts__info__detail__social">
                 <div class="contacts__info__detail__social__item">
                   <a href="https://www.whatsapp.com/"
-                    ><unicon name="whatsapp" fill="#777"
+                    ><Icon icon="fa-brands:whatsapp" width="24" height="24"
                   /></a>
                 </div>
                 <div class="contacts__info__detail__social__item">
                   <a href="https://telegram.org/"
-                    ><unicon name="telegram-alt" fill="#777"
+                    ><Icon
+                      icon="fa-brands:telegram-plane"
+                      width="24"
+                      height="24"
                   /></a>
                 </div>
                 <div class="contacts__info__detail__social__item">
                   <a href="https://vk.com/"
-                    ><unicon name="vk-alt" fill="#777"
+                    ><Icon icon="fa-brands:vk" width="24" height="24"
                   /></a>
                 </div>
               </div>
@@ -115,6 +118,7 @@
 
 <script>
 import { MaskInput } from "vue-3-mask";
+import { Icon } from "@iconify/vue";
 import emailjs from "emailjs-com";
 export default {
   data() {
@@ -125,17 +129,18 @@ export default {
   },
   components: {
     MaskInput,
+    Icon,
   },
   methods: {
     sendEmail(e) {
-      //cxl56595@zslsz.com
       const self = this;
+      //bari@temp-inbox.me
       emailjs
         .sendForm(
-          "service_immv23g",
-          "template_vmsjxn4",
+          "service_ugr2ppb",
+          "template_9fdcvo3",
           e.target,
-          "DOW3AKNJ0TAiV1e87"
+          "cSLzHUrDsodoxzdk5"
         )
         .then(
           (result) => {
@@ -202,11 +207,14 @@ export default {
           justify-content: center;
           border-radius: 50%;
           border: 1px solid #777;
+          line-height: 1;
           transition: 0.3s;
           overflow: hidden;
           position: relative;
-          .unicon {
+          & > a {
             transform: translateY(1.5px);
+            line-height: 1;
+            position: relative;
           }
           &::before {
             position: absolute;
@@ -220,7 +228,8 @@ export default {
             background: $main-color;
           }
           &:hover {
-            svg {
+            border-color: transparent;
+            svg path {
               fill: #fff;
             }
             &::before {
@@ -252,6 +261,7 @@ export default {
         height: 40px;
         border: 1px solid #ebebeb;
         outline: none;
+        font-family: $font-text;
       }
       textarea {
         height: 200px;

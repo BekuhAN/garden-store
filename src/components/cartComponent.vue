@@ -21,7 +21,7 @@
           >
             <div class="cart__modal__list__item__image">Изображение</div>
             <div class="cart__modal__list__item__name">Наименование</div>
-            <div class="cart__modal__list__item__packege">Количество</div>
+            <div class="cart__modal__list__item__packege">Кол-во, шт.</div>
             <div class="cart__modal__list__item__price">Стоимость</div>
             <div class="cart__modal__list__item__control">Удалить</div>
           </div>
@@ -33,7 +33,7 @@
             <div class="cart__modal__list__item__image">
               <img :src="require(`../assets/img/${item.image}`)" />
             </div>
-            <div onclick="visibleModal" class="cart__modal__list__item__name">
+            <div class="cart__modal__list__item__name">
               {{ item.title }}
             </div>
             <div class="cart__modal__list__item__packege">
@@ -46,9 +46,7 @@
               />
             </div>
             <div class="cart__modal__list__item__price">
-              <span>
-                {{ item.count * item.price }}
-              </span>
+              <span> {{ priceFormat(item.count * item.price) }} ₽ </span>
             </div>
             <div class="cart__modal__list__item__control">
               <Icon
@@ -102,7 +100,9 @@
             <button class="cart__modal__clear" @click="clearCart">
               Очистить
             </button>
-            <div class="cart__modal__total">Итог: {{ total }}</div>
+            <div class="cart__modal__total">
+              Итог: {{ priceFormat(total) }} ₽
+            </div>
           </div>
         </div>
       </div>
@@ -134,6 +134,9 @@ export default {
   },
   beforeMount() {},
   methods: {
+    priceFormat(price) {
+      return price.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1 ");
+    },
     pricePlus(item) {
       if (item.count < 200) item.qty += 1;
     },
@@ -145,12 +148,13 @@ export default {
     },
     ...mapActions(["clearCart", "deleteCartItem"]),
     sendEmail(e) {
+      //bari@temp-inbox.me
       emailjs
         .sendForm(
-          "service_immv23g",
-          "template_u4l9ywx",
+          "service_ugr2ppb",
+          "template_31d238m",
           e.target,
-          "DOW3AKNJ0TAiV1e87"
+          "cSLzHUrDsodoxzdk5"
         )
         .then(
           (result) => {
@@ -252,6 +256,7 @@ export default {
       text-align: center;
       border-bottom: 1px solid #ded6d4;
       font-weight: 500;
+      font-family: "Montserrat Alternates", sans-serif;
     }
     &__list {
       height: 50vh;

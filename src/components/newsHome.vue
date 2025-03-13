@@ -22,11 +22,11 @@
               <img :src="require(`../assets/img/${item.image}`)" />
               <div class="news_home__item__control">
                 <router-link :to="`/news/${item.id}`"
-                  ><unicon
+                  ><Icon
+                    icon="solar:info-square-line-duotone"
+                    width="32"
+                    height="32"
                     class="news_home__item__control__icon"
-                    width="40"
-                    name="ellipsis-h"
-                    fill="#ffffff"
                 /></router-link>
               </div>
             </router-link>
@@ -49,7 +49,7 @@
 </template>
 
 <script>
-// import { Icon } from "@iconify/vue";
+import { Icon } from "@iconify/vue";
 import { Swiper, SwiperSlide } from "swiper/vue";
 
 import "swiper/css";
@@ -58,7 +58,7 @@ import { Autoplay } from "swiper/modules";
 import { mapGetters, mapActions } from "vuex";
 export default {
   name: "HomeView",
-  components: { Swiper, SwiperSlide },
+  components: { Swiper, SwiperSlide, Icon },
   data() {
     return {};
   },
@@ -91,6 +91,19 @@ export default {
   .section_title {
     text-align: left;
     margin-bottom: 50px;
+    position: relative;
+    font-family: "Montserrat Alternates", sans-serif;
+    font-weight: 700;
+    &::before {
+      content: "";
+      position: absolute;
+      height: 2px;
+      width: 100px;
+      background: $main-color;
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+    }
   }
   &__item {
     padding-bottom: 30px;
@@ -108,6 +121,7 @@ export default {
       transition: 0.3s;
       &__icon {
         transition: 0.3s;
+        color: #fff;
         &:hover {
           transform: scale(1.2);
         }

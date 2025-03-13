@@ -55,6 +55,7 @@ export default {};
     display: inline-block;
     padding: 15px 45px;
     background: $main-color;
+    font-family: "Montserrat Alternates", sans-serif;
     transition: 0.4s;
     &:hover {
       background: #333;

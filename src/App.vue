@@ -71,7 +71,6 @@ body {
   background: url("./assets/img/bg_page.webp") no-repeat;
   background-size: cover;
   height: 300px;
-  font-family: "Montserrat Alternates", sans-serif;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -80,9 +79,10 @@ body {
   color: #fff;
   & > span {
     font-size: 60px;
-    font-weight: 400;
+    font-weight: 900;
     margin-bottom: 20px;
     text-align: center;
+    font-family: "Montserrat Alternates", sans-serif;
   }
 }
 </style>

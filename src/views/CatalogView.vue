@@ -170,6 +170,7 @@ export default {
       color: #000;
       text-transform: uppercase;
       outline: none;
+      font-family: $font-text;
     }
   }
 
@@ -182,6 +183,7 @@ export default {
       padding-bottom: 26px;
       margin-bottom: 30px;
       border-bottom: 1px solid #e6e6e6;
+      font-family: "Montserrat Alternates", sans-serif;
     }
     &__list {
       &__item {
@@ -190,17 +192,18 @@ export default {
         padding-left: 15px;
         cursor: pointer;
         transition: 0.3s;
+        display: flex;
+        align-items: center;
+        padding: 15px 0;
         &:hover {
           color: $main-color;
-          padding-left: 30px;
+          padding-left: 20px;
+          border-left: 5px solid $main-color;
         }
         &.active {
           color: $main-color;
-          padding-left: 30px;
-        }
-        &:not(:last-child) {
-          padding-bottom: 15px;
-          margin-bottom: 15px;
+          padding-left: 20px;
+          border-left: 5px solid $main-color;
         }
       }
     }
